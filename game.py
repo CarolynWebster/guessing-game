@@ -13,7 +13,11 @@ totalG = 0
 
 
 def checkGuess():
-    guess = int(raw_input("Your guess? "))
+    try:
+        guess = int(raw_input("Your guess? "))
+    except:
+        print "You fool! That's not a number!"
+        return
     if in_range(guess):
         if guess > secretNumber:
             print "Your guess is too high, try again."
@@ -30,6 +34,7 @@ def in_range(guess):
     if guess > 0 and guess < 101:
         return True
     return False
+
 
 while guess != secretNumber:
     totalG += 1
