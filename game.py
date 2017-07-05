@@ -14,13 +14,23 @@ totalG = 0
 
 def checkGuess():
     guess = int(raw_input("Your guess? "))
-    if guess > secretNumber:
-        print "Your guess is too high, try again."
-    elif guess < secretNumber:
-        print "Your guess is too low, try again."
+    if in_range(guess):
+        if guess > secretNumber:
+            print "Your guess is too high, try again."
+        elif guess < secretNumber:
+            print "Your guess is too low, try again."
+        else:
+            print "Well done, " + userName + "! You found my number in " + str(totalG) + " tries!"
     else:
-        print "Well done, " + userName + "! You found my number in " + str(totalG) + " tries!"
+        print "That guess is outside of the range!"
     return guess
+
+
+def in_range(guess):
+    if guess > 0 and guess < 101:
+        return True
+    else:
+        return False
 
 while guess != secretNumber:
     totalG += 1
