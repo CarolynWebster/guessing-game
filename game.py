@@ -29,8 +29,7 @@ def checkGuess():
 def in_range(guess):
     if guess > 0 and guess < 101:
         return True
-    else:
-        return False
+    return False
 
 while guess != secretNumber:
     totalG += 1
