@@ -11,11 +11,12 @@ secretNumber = random.randint(1, 100)
 tooHigh = 101
 tooLow = 0
 guess = None
-totalGuesses = 0
+totalG = 0
 
-def checkGuess():
+
+def checkGuess(totalG):
     guess = int(raw_input("Your guess? "))
-    totalGuesses += 1
+    totalG = totalG + 1
     if guess > secretNumber:
         print "Your guess is too high, try again."
         #guess = int(raw_input("Your guess? "))
@@ -23,7 +24,8 @@ def checkGuess():
         print "Your guess is too low, try again."
         #guess = int(raw_input("Your guess? "))
     else:
-        print "Well done, " + userName + "! You found my number in " + str(totalGuesses) + " tries!"
-
+        print "Well done, " + userName + "! You found my number in " + str(totalG) + " tries!"
+    return totalG
+print totalG
 while guess != secretNumber:
-    checkGuess()
+    totalG = checkGuess(totalG)
