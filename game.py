@@ -13,6 +13,7 @@ totalG = 0
 
 
 def checkGuess():
+    """Decides if guess is numerical or correct"""
     try:
         guess = int(raw_input("Your guess? "))
     except:
@@ -31,6 +32,7 @@ def checkGuess():
 
 
 def in_range(guess):
+    """decides if guess is within range of 1:101"""
     if guess > 0 and guess < 101:
         return True
     return False
